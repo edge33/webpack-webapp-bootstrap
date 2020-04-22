@@ -1,16 +1,9 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
-const env = process.env.NODE_ENV
 
-const config = {
-   mode: env || 'development'
-}
-
-module.exports = {
+let config =  {
     entry: './src/js/index.ts',
-    devtool: env === 'development'? "inline-source-map" : "",
-    mode: env,
     output: {
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
@@ -25,7 +18,12 @@ module.exports = {
                 // Include ts, tsx, js, and jsx files.
                 test: /\.(ts|js)x?$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-typescript']
+                    }
+                }
             },
             {
                 test: /\.css$/i,
@@ -60,3 +58,13 @@ module.exports = {
         }
     )]
 };
+
+module.exports = (env, argv) => {
+    if (argv.mode === 'development') {
+        config.devtool = 'inline-source-maps';
+    }
+    if (argv.mode === 'production') {
+        //
+    }
+    return config;
+}
