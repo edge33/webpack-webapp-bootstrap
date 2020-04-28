@@ -1,6 +1,9 @@
 module.exports = {
     root: true,
-    parser: '@typescript-eslint/parser',
+    parser: 'vue-eslint-parser',
+    parserOptions: {
+      parser: '@typescript-eslint/parser'
+    },
     plugins: [
       '@typescript-eslint',
     ],
@@ -8,6 +11,7 @@ module.exports = {
       'eslint:recommended',
       'plugin:@typescript-eslint/eslint-recommended',
       'plugin:@typescript-eslint/recommended',
+      'plugin:vue/vue3-recommended'
     ],
 
     rules: {

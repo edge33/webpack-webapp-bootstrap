@@ -1,10 +1,10 @@
 {
 	"compilerOptions": {
 		// Target latest version of ECMAScript.
-		"target": "esnext",
+		"target": "es5",
 		// Search under node_modules for non-relative imports.
 		"moduleResolution": "node",
-		"module": "esnext",
+		"module": "es2015",
 		// Process & infer types from .js files.
 		"allowJs": true,
 		// Don't emit; allow Babel to transform files.
@@ -17,6 +17,6 @@
 		"esModuleInterop": true
 	},
 	"include": [
-		"src"
+		"src/**/*"
 	]
 }

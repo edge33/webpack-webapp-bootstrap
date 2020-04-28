@@ -1,4 +1,5 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
@@ -18,12 +19,17 @@ let config =  {
                 // Include ts, tsx, js, and jsx files.
                 test: /\.(ts|js)x?$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env', '@babel/preset-typescript']
+                use:
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env', '@babel/preset-typescript', 'babel-preset-typescript-vue']
                     }
                 }
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
             },
             {
                 test: /\.css$/i,
@@ -41,7 +47,7 @@ let config =  {
                 ],
             },
             {
-                test: /\.ts$/,
+                test: /\.(vue|ts)$/,
                 exclude: /node_modules/,
                 loader: 'eslint-loader',
                 options: {
@@ -50,7 +56,11 @@ let config =  {
               }
         ]
     },
+    resolve: {
+        alias: { vue: 'vue/dist/vue.esm.js' }
+    },
     plugins: [
+        new VueLoaderPlugin(),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin(
         {
