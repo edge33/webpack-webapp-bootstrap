@@ -1,14 +1,15 @@
-# webpack-webapp-bootstrap
+**VueJS**
 
-Quickly bootsprap your webpack powered webapps using this sample config.
-
-it comes with a basic configuration composed of:
+Sample VueJS webpack boilerplate with:
 
 - Webpack
 - Eslint
 - Typescript
-- Sass Loader
-- ES Loader
+- sass-Loader
+- css-loader
+- style-loader
+- babel-loader (transpile to es5)
+- vue-loader
 
 it comes with the following npm scripts:
 

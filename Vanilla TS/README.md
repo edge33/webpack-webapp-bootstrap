@@ -1,14 +1,14 @@
-# webpack-webapp-bootstrap
+**Vanilla TS**
 
-Quickly bootsprap your webpack powered webapps using this sample config.
-
-it comes with a basic configuration composed of:
+Sample plain TypeScript webpack boilerplate with:
 
 - Webpack
 - Eslint
 - Typescript
-- Sass Loader
-- ES Loader
+- sass-Loader
+- css-loader
+- style-loader
+- babel-loader (transpile to es5)
 
 it comes with the following npm scripts:
 

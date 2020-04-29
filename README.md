@@ -1,36 +1,17 @@
 # webpack-webapp-bootstrap
 
-Quickly bootsprap your webpack powered webapps using this sample config.
+**Setups**
 
-it comes with a basic configuration composed of:
+Quickly bootsprap your webpack powered webapps using these boilerplates.
 
-- Webpack
-- Eslint
-- Typescript
-- Sass Loader
-- ES Loader
+- [TypeScript with no frameworks ](https://github.com/edge33/webpack-webapp-bootstrap/tree/master/Vanilla%20TS)
+- [VueJS](https://github.com/edge33/webpack-webapp-bootstrap/tree/master/VueJS)
 
-it comes with the following npm scripts:
+**Contributing**
 
-- type-check
-- build
-- lint
-- dev
+Bug reports and pull reports are welcome, ideas on what to add aswell.
 
-type-check provides validation for Typescript files
+**License**
 
-build runs the webpack build process and creates production build in _dist/_ folder
+All the content of this repository is released as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-lint runs eslint on the ts files
-
-dev runs webpack serve in order to start development
-
-To run the app, install dependencies:
-
-`$ npm install`
-
-then run 
-
-`$ npm run dev`
-
-browse to http://localhost:8000 and start building.
