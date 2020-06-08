@@ -57,7 +57,8 @@ let config =  {
         ]
     },
     resolve: {
-        alias: { vue: 'vue/dist/vue.esm.js' }
+        alias: { vue: 'vue/dist/vue.esm.js' },
+        extensions: ['.js', '.ts', '.vue']
     },
     plugins: [
         new VueLoaderPlugin(),
